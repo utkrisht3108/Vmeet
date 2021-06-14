@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+img {
+  max-width: 100%;
+}
+body {
+  background-color: #111111;
+}
+.fa-vimeo-v {
+  color: #111111;
+  background-color: #dddddd;
+  border-radius: 100%;
+  padding: 12px;
+}
+.but1 {
+  cursor: pointer;
+}
+.logo {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3rem;
+  color: #dddddd;
+  font-weight: bold;
+  padding: 0 10%;
+  margin-top: 12px;
+}
+.time {
+  margin-top: 10px;
+  margin-right: 25px;
+  margin-left: auto;
+  font-size: 2rem;
+}
+.main {
+  display: flex;
+  padding: 0 10%;
+  margin-top: 6%;
+  width: 100%;
+}
+.head {
+  font-size: 36px;
+  font-weight: bold;
+  color: #dddddd;
+}
+.subtext {
+  font-size: 24px;
+  color: #6f6f6f;
+  margin-top: 10px;
+}
+.create-button {
+  width: 100%;
+  margin-top: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #3498db;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.create-button:hover {
+  background-color: #0061a8;
+  color: whitesmoke;
+  cursor: pointer;
+  outline: none;
+}
+.create-button:focus {
+  outline: none;
+}
+.createroom-clicked {
+  width: 100%;
+  margin-top: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #dddddd;
+  border: 2px solid #3498db;
+  color: #3498db;
+}
+.createroom-clicked:focus {
+  outline: none;
+}
+.roomcode {
+  width: 100%;
+  font-size: 24px;
+  color: #dddddd;
+  text-align: center;
+  padding: 10px 0;
+  border: #111111;
+  border-bottom: 3px solid #232931;
+  font-weight: bold;
+}
+.roomcode:focus {
+  background-color: #111111;
+  border: 0;
+  border-bottom: 3px solid #232931;
+  border-top: 2px solid #111111;
+  outline: none;
+  border-radius: 0;
+}
+.roomcode-error {
+  border-bottom: 3px solid #d31c1c;
+}
+.joinroom {
+  margin-top: 20px;
+  margin-left: 75%;
+  width: auto;
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #dddddd;
+}
+input[type='text'],
+textarea {
+  background-color: #111111;
+}
+.joinroom:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.video-cont {
+  padding-left: 5%;
+}
+.video-self {
+  height: 87.5%;
+  max-height: 385px;
+  width: 100%;
+  background-color: #dddddd;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.settings {
+  margin: 0 30%;
+  margin-left: 32%;
+  display: flex;
+  margin-top: 25px;
+  width: 50%;
+  color: whitesmoke;
+}
+.device {
+  background-color: #cd0a0a;
+  border-radius: 100%;
+  margin: 0% 10%;
+  font-size: 125%;
+}
+.mic1 {
+  padding: 5% 7.5%;
+}
+
+.device:hover {
+  background-color: #393e46;
+  cursor: pointer;
+}
+.nodevice {
+  background-color: #393e46;
+  border-radius: 100%;
+  margin: 0% 10%;
+  font-size: 125%;
+}
+.nodevice:hover {
+  cursor: pointer;
+}
+.mic2 {
+  padding: 5% 5.265%;
+}
+.cam1 {
+  padding: 5% 6%;
+}
+.cam2 {
+  padding: 5% 5.7%;
+}
+@media (max-width: 991px) {
+  .video-self {
+    height: 150%;
+    width: 100%;
+  }
+  .video-cont {
+    margin-top: 20%;
+    margin-bottom: 50%;
+  }
+}
+@media (max-width: 800px) {
+  .settings {
+    margin-top: 3%;
+  }
+  .time {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 662px) {
+  .time {
+    margin-top: 10px;
+    margin-left: 0px;
+    font-size: 1rem;
+  }
+  .settings {
+    margin: 0% 28%;
+    margin-top: 3%;
+  }
+  .joinroom {
+    margin-left: 70%;
+    font-size: 115%;
+  }
+  .logo {
+    display: block;
+    font-size: 3rem;
+    padding-bottom: 5%;
+  }
+  .video-cont {
+    padding-left: 0;
+    margin-bottom: 50%;
+  }
+  #webcam {
+    padding: 5% 7%;
+  }
+  .main {
+    padding-right: 1%;
+  }
+  .mic1 {
+    padding: 6% 9%;
+  }
+  .mic2 {
+    padding: 6% 6.5%;
+  }
+}
