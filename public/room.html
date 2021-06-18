@@ -4,9 +4,85 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>VMeet- Connect to All</title>
+    <link rel="icon" href="./img/icons8-video-call-48.png" />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://kit.fontawesome.com/6510466b6c.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>hi</h1>
+    <div class="overlay" id="overlay">
+      <div class="box">
+        <div class="head-name">Enter Your Name</div>
+        <input type="text" class="name-field" placeholder="Type here.." id="name-field" /><br />
+        <button class="continue-name">Enter</button>
+      </div>
+    </div>
+    <div class="container-room">
+      <div class="left-cont">
+        <div class="video-cont-single" id="vcont">
+          <div class="video-box">
+            <video class="video-frame" id="vd1" autoplay playsinline></video>
+            <div class="nametag" id="myname">USER</div>
+            <div class="mute-icon" id="mymuteicon">
+              <i class="fas fa-microphone-slash"></i>
+            </div>
+            <div class="video-off" id="myvideooff">Video Off</div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="copycode-cont">
+            <div class="roomcode">000000</div>
+            <button class="copycode-button" onclick="CopyClassText()">Copy Code</button>
+          </div>
+          <div class="utils">
+            <div class="audio">
+              <i class="fas fa-microphone"></i>
+            </div>
+            <div class="novideo">
+              <i class="fas fa-video"></i>
+            </div>
+            <div class="cutcall icon-hover">
+              <i class="fas fa-phone-slash"></i>
+              <span class="icon-hover-text up">Leave Call</span>
+            </div>
+            <div class="screenshare icon-hover">
+              <i class="fas fa-desktop"></i>
+              <span class="icon-hover-text up">Share Screen</span>
+            </div>
+            <div class="board-icon icon-hover">
+              <i class="fas fa-chalkboard"></i>
+              <span class="icon-hover-text up">Whiteboard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-cont">
+        <div class="head-title">
+          <div class="chats"><i class="fas fa-comment-alt mr-1"></i> Chats</div>
+          <button class="icon-hover edit-icon">
+            <i class="fas fa-edit"></i>
+            <span class="icon-hover-text down">Edit Icon</span>
+          </button>
+        </div>
+        <div class="chat-cont"></div>
+        <div class="chat-input-cont">
+          <div class="ci-cont">
+            <input type="text" class="chat-input" placeholder="Type chat here.." />
+          </div>
+
+          <div class="ci-send"><button class="chat-send">Send</button></div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="src/room.js"></script>
   </body>
 </html>

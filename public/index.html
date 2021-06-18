@@ -27,6 +27,27 @@
     <script src="https://kit.fontawesome.com/6510466b6c.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="dropdown sideho">
+      <button
+        class="btn btn-secondary color1 dropdown-toggle chota"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Keyboard Shortcuts
+        <i class="fas fa-cog"></i>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item chota" href="#"
+          >Microphone On/Off <i class="fas fa-arrow-right"></i> Ctrl+d</a
+        >
+        <a class="dropdown-item chota" href="#"
+          >Camera On/Off <i class="fas fa-arrow-right"></i> Ctrl+e</a
+        >
+      </div>
+    </div>
     <navbar>
       <div class="logo">
         <i class="fab fa-vimeo-v"></i> <span class="but1">VMeet</span>
@@ -49,10 +70,10 @@
           spellcheck="false"
           placeholder="Enter Room Code"
           id="roomcode"
-          class="roomcode"
+          class="roomcode1"
           autocomplete="off"
         /><br />
-        <div class="joinroom" id="joinroom">Join Room</div>
+        <button class="joinroom" id="joinroom">Join Room</button>
       </div>
       <div class="video-cont col-lg-6">
         <video class="video-self" autoplay muted playsinline></video>

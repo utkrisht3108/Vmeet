@@ -58,9 +58,9 @@ codeCont.addEventListener('change', (e) => {
   }
 });
 
-mic.addEventListener('click', () => {
-  toggleMic();
-});
 cam.addEventListener('click', () => {
   toggleCam();
+});
+mic.addEventListener('click', () => {
+  toggleMic();
 });
