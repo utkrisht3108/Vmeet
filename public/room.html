@@ -10,17 +10,67 @@
       rel="stylesheet"
       href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://kit.fontawesome.com/6510466b6c.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="overlay" id="overlay">
+      <div class="dropdown sideho">
+        <button
+          class="btn btn-secondary color1 dropdown-toggle chota"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Keyboard Shortcuts
+          <i class="fas fa-cog"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <p class="dropdown-item chota" href="#">
+            Microphone On/Off <i class="fas fa-arrow-right"></i> Ctrl+d
+          </p>
+          <p class="dropdown-item chota" href="#">
+            Camera On/Off <i class="fas fa-arrow-right"></i> Ctrl+e
+          </p>
+          <p class="dropdown-item chota" href="#">
+            Enter Room Code <i class="fas fa-arrow-right"></i> Ctrl+/
+          </p>
+          <p class="dropdown-item chota" href="#">
+            Copy Room Code <i class="fas fa-arrow-right"></i> Ctrl+Shift+C
+          </p>
+          <p class="dropdown-item chota" href="#">
+            Open Chat <i class="fas fa-arrow-right"></i> Ctrl+/
+          </p>
+          <p class="dropdown-item chota" href="#">
+            Send Message <i class="fas fa-arrow-right"></i> Enter
+          </p>
+        </div>
+      </div>
       <div class="box">
-        <div class="head-name">Enter Your Name</div>
-        <input type="text" class="name-field" placeholder="Type here.." id="name-field" /><br />
+        <div class="head-name">
+          <button class="backButton"><i class="fas fa-angle-left"></i></button> Edit Details
+        </div>
+        <div class="heading">Enter your name</div>
+        <input
+          type="text"
+          class="name-field"
+          placeholder="Type here.."
+          autocomplete="off"
+          id="name-field"
+        /><br />
         <button class="continue-name">Enter</button>
       </div>
     </div>
@@ -67,22 +117,36 @@
       <div class="right-cont">
         <div class="head-title">
           <div class="chats"><i class="fas fa-comment-alt mr-1"></i> Chats</div>
-          <button class="icon-hover edit-icon">
+          <button class="edit-icon">
             <i class="fas fa-edit"></i>
-            <span class="icon-hover-text down">Edit Icon</span>
           </button>
         </div>
-        <div class="chat-cont"></div>
+        <div class="chat-cont">
+          <div class="message">
+            <div class="info">
+              <div class="username">UTKRISHT</div>
+              <div class="time">10:07</div>
+            </div>
+            <div class="content">Happy birthday</div>
+          </div>
+          <div class="message">
+            <div class="info">
+              <div class="username">Shizuka</div>
+              <div class="time">10:12</div>
+            </div>
+            <div class="content">Happy birthday aha ahah ah asc kal anaa, Yoo ascoia asocin</div>
+          </div>
+        </div>
         <div class="chat-input-cont">
           <div class="ci-cont">
             <input type="text" class="chat-input" placeholder="Type chat here.." />
           </div>
-
           <div class="ci-send"><button class="chat-send">Send</button></div>
         </div>
       </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="src/room.js"></script>
+    <script src="src/room/room.js"></script>
+    <script src="src/room/roomEventListeners.js"></script>
   </body>
 </html>

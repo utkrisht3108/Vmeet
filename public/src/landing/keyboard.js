@@ -7,7 +7,7 @@ document.addEventListener('keydown', function (event) {
     event.preventDefault();
     toggleCam();
   }
-  if (event.ctrlKey && event.key === '') {
+  if (event.ctrlKey && event.key === '/') {
     codeCont.focus();
   }
 });
