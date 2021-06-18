@@ -154,7 +154,7 @@ textarea {
 .joinroom:hover {
   text-decoration: underline;
 }
-.joinroom:focus {
+.joinroom:focus{
   outline: none;
 }
 .video-cont {

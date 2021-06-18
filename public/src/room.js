@@ -20,6 +20,11 @@ continueButt.addEventListener('click', () => {
   document.querySelector('#myname').innerHTML = `${username} (You)`;
 });
 
+document.addEventListener('keydown', function (event) {
+  if (event.ctrlKey && event.key === '/') {
+    nameField.focus();
+  }
+});
 nameField.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
