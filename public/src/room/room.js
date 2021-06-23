@@ -1,3 +1,4 @@
+const socket = io();
 let params = new URL(document.location).searchParams;
 const chatRoom = document.querySelector('.chat-cont');
 const sendButton = document.querySelector('.chat-send');
@@ -40,3 +41,30 @@ mymuteicon.style.visibility = 'hidden';
 
 let myvideooff = document.querySelector('#myvideooff');
 myvideooff.style.visibility = 'hidden';
+
+socket.on('message', (message, name, time) => {
+  // console.log(message + ' ' + name + ' ' + time);
+  chatRoom.scrollTop = chatRoom.scrollHeight;
+  chatRoom.innerHTML += `<div class="message">
+            <div class="info">
+              <div class="username">${name}</div>
+              <div class="time">${time}</div>
+            </div>
+            <div class="content">${message}</div>
+          </div>`;
+});
+
+//admin message
+socket.on('Adminmessage', (message, name, time) => {
+  chatRoom.scrollTop = chatRoom.scrollHeight;
+  chatRoom.innerHTML += `<div class="message adminmessage">
+            <div class="info admininfo">
+              <div class="username adminusername">${name}</div>
+              <div class="time admintime">${time}</div>
+            </div>
+            <div class="content admincontent">${message}</div>
+          </div>`;
+});
+
+
+//Join room

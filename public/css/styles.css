@@ -134,8 +134,8 @@ body {
 
 .joinroom {
   margin-top: 20px;
-  margin-left: 80%;
-  width: auto;
+  margin-right: 0;
+  width: 100%;
   text-align: right;
   font-size: 24px;
   font-weight: bold;
@@ -158,8 +158,8 @@ textarea {
   padding-left: 5%;
 }
 .video-self {
-  height: 87.5%;
-  max-height: 385px;
+  height: 100%;
+  max-height: 380px;
   width: 100%;
   background-color: #6d6c6c;
   border-radius: 20px;
@@ -238,7 +238,6 @@ textarea {
     margin-top: 3%;
   }
   .joinroom {
-    margin-right: auto;
     font-size: 100%;
   }
   .logo {
@@ -249,6 +248,9 @@ textarea {
   .video-cont {
     padding-left: 0;
     margin-bottom: 50%;
+  }
+  .video-self {
+    max-height: 450px;
   }
   #webcam {
     padding: 5% 7%;

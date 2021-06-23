@@ -34,6 +34,13 @@ messageField.addEventListener('keyup', function (event) {
   }
 });
 
+sendButton.addEventListener('click', () => {
+  const msg = messageField.value;
+  messageField.value = '';
+  // console.log(msg + ' ' + username + ' ' + roomid);
+  socket.emit('message', msg, username, roomid);
+});
+
 editButton.addEventListener('click', function (event) {
   overlayContainer.style.visibility = 'visible';
 });
