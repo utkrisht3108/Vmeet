@@ -3,6 +3,7 @@ const express = require('express');
 const http = require('http');
 const moment = require('moment');
 const socketio = require('socket.io');
+const formatMessage = require('./utils/messages');
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -20,24 +21,20 @@ const admin = 'VMEET';
 
 //when client connects
 io.on('connection', (socket) => {
-  socket.emit('Adminmessage', 'WELCOME TO THE CHAT', admin, moment().format('h:mm a'));
-  socket.broadcast.emit(
-    'Adminmessage',
-    'A USER HAS JOIN THE CHAT',
-    admin,
-    moment().format('h:mm a')
-  );
+  socket.emit('Adminmessage', formatMessage('WELCOME TO THE CHAT', admin));
+  socket.broadcast.emit('Adminmessage', formatMessage('A USER HAS JOIN THE CHAT', admin));
 
   socket.on('disconnect', () => {
-    io.emit('Adminmessage', 'A USER HAS LEFT THE CHAT', admin, moment().format('h:mm a'));
-  });
-
-  //listen message
-  socket.on('message', (message, username, roomid) => {
-    io.emit('message', message, username, moment().format('h:mm a'));
+    io.emit('Adminmessage', formatMessage('A USER HAS LEFT THE CHAT', admin));
   });
 
   //join room
+
+  //listen message
+  socket.on('message', (message, username, roomid) => {
+    // console.log(message + ' ' + username + '___' + roomid);
+    io.emit('message', formatMessage(message, username));
+  });
 });
 
 server.listen(PORT, () => console.log(`Server is up and running on port ${PORT}`));

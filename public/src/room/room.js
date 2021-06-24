@@ -31,9 +31,13 @@ function CopyClassText() {
   window.getSelection().removeAllRanges();
 
   document.querySelector('.copycode-button').textContent = 'Copied!';
+  document.querySelector('.copycode-button').style.backgroundColor = '#66DE93';
+  document.querySelector('.roomcode').style.borderColor = '#66DE93';
   setTimeout(() => {
     document.querySelector('.copycode-button').textContent = 'Copy Code';
-  }, 5000);
+    document.querySelector('.copycode-button').style.backgroundColor = '#3498db';
+    document.querySelector('.roomcode').style.borderColor = '#3498db';
+  }, 2500);
 }
 
 let mymuteicon = document.querySelector('#mymuteicon');
@@ -42,29 +46,28 @@ mymuteicon.style.visibility = 'hidden';
 let myvideooff = document.querySelector('#myvideooff');
 myvideooff.style.visibility = 'hidden';
 
-socket.on('message', (message, name, time) => {
+socket.on('message', (message) => {
   // console.log(message + ' ' + name + ' ' + time);
   chatRoom.scrollTop = chatRoom.scrollHeight;
   chatRoom.innerHTML += `<div class="message">
             <div class="info">
-              <div class="username">${name}</div>
-              <div class="time">${time}</div>
+              <div class="username">${message.username}</div>
+              <div class="time">${message.time}</div>
             </div>
-            <div class="content">${message}</div>
+            <div class="content">${message.message}</div>
           </div>`;
 });
 
 //admin message
-socket.on('Adminmessage', (message, name, time) => {
+socket.on('Adminmessage', (message) => {
   chatRoom.scrollTop = chatRoom.scrollHeight;
   chatRoom.innerHTML += `<div class="message adminmessage">
             <div class="info admininfo">
-              <div class="username adminusername">${name}</div>
-              <div class="time admintime">${time}</div>
+              <div class="username adminusername">${message.username}</div>
+              <div class="time admintime">${message.time}</div>
             </div>
-            <div class="content admincontent">${message}</div>
+            <div class="content admincontent">${message.message}</div>
           </div>`;
 });
-
 
 //Join room

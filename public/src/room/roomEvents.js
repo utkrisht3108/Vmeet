@@ -36,8 +36,9 @@ messageField.addEventListener('keyup', function (event) {
 
 sendButton.addEventListener('click', () => {
   const msg = messageField.value;
+  if (msg.length == 0) return;
   messageField.value = '';
-  // console.log(msg + ' ' + username + ' ' + roomid);
+  // console.log(msg + ' ' + username + ' ' + roomid + ' ' + socket.id);
   socket.emit('message', msg, username, roomid);
 });
 
