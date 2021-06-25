@@ -40,28 +40,37 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <p class="dropdown-item chota" href="#">
-            Microphone On/Off <i class="fas fa-arrow-right"></i> Ctrl+d
+            Microphone On/Off
+            <i class="fas fa-arrow-right"></i> Ctrl+d
           </p>
           <p class="dropdown-item chota" href="#">
-            Camera On/Off <i class="fas fa-arrow-right"></i> Ctrl+e
+            Camera On/Off
+            <i class="fas fa-arrow-right"></i> Ctrl+e
           </p>
           <p class="dropdown-item chota" href="#">
-            Enter Room Code <i class="fas fa-arrow-right"></i> Ctrl+/
+            Enter Room Code
+            <i class="fas fa-arrow-right"></i> Ctrl+/
           </p>
           <p class="dropdown-item chota" href="#">
-            Copy Room Code <i class="fas fa-arrow-right"></i> Ctrl+Shift+C
+            Copy Room Code
+            <i class="fas fa-arrow-right"></i> Ctrl+Shift+C
           </p>
           <p class="dropdown-item chota" href="#">
-            Open Chat <i class="fas fa-arrow-right"></i> Ctrl+/
+            Open Chat
+            <i class="fas fa-arrow-right"></i> Ctrl+/
           </p>
           <p class="dropdown-item chota" href="#">
-            Send Message <i class="fas fa-arrow-right"></i> Enter
+            Send Message
+            <i class="fas fa-arrow-right"></i> Enter
           </p>
         </div>
       </div>
       <div class="box">
         <div class="head-name">
-          <button class="backButton"><i class="fas fa-angle-left"></i></button> Edit Details
+          <button class="backButton">
+            <i class="fas fa-angle-left"></i>
+          </button>
+          Edit Details
         </div>
         <div class="heading">Enter your name</div>
         <input
@@ -76,7 +85,7 @@
     </div>
     <div class="container-room">
       <div class="left-cont">
-        <div class="video-cont-single" id="vcont">
+        <div class="video-cont-single gridsize" id="vcont">
           <div class="video-box">
             <video class="video-frame" id="vd1" autoplay playsinline></video>
             <div class="nametag" id="myname">USER</div>
@@ -92,21 +101,21 @@
             <button class="copycode-button" onclick="CopyClassText()">Copy Code</button>
           </div>
           <div class="utils">
-            <div class="audio">
+            <div class="audio same1">
               <i class="fas fa-microphone"></i>
             </div>
-            <div class="novideo">
+            <div class="novideo same1">
               <i class="fas fa-video"></i>
             </div>
-            <div class="cutcall icon-hover">
+            <div class="cutcall icon-hover same2">
               <i class="fas fa-phone-slash"></i>
               <span class="icon-hover-text up">Leave Call</span>
             </div>
-            <div class="screenshare icon-hover">
+            <div class="attendies icon-hover same3">
               <i class="fas fa-user-friends"></i>
               <span class="icon-hover-text up">Attendies</span>
             </div>
-            <div class="board-icon icon-hover">
+            <div class="board-icon icon-hover same3">
               <i class="fas fa-chalkboard"></i>
               <span class="icon-hover-text up">Whiteboard</span>
             </div>
@@ -126,12 +135,20 @@
           <div class="ci-cont">
             <input type="text" class="chat-input" placeholder="Type chat here.." />
           </div>
-          <div class="ci-send"><button class="chat-send">Send</button></div>
+          <div class="ci-send">
+            <button class="chat-send">Send</button>
+          </div>
         </div>
       </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="src/room/room.js"></script>
     <script src="src/room/roomEvents.js"></script>
+    <script src="src/room/messageForm.js"></script>
+    <script src="src/room/joinRoom.js"></script>
+    <script src="src/room/action.js"></script>
+    <script src="src/room/copy.js"></script>
+    <script src="src/room/error.js"></script>
+    <script src="src/room/gridcheck.js"></script>
   </body>
 </html>

@@ -206,66 +206,6 @@ textarea {
 .cam2 {
   padding: 5% 5.4%;
 }
-@media (max-width: 991px) {
-  .video-self {
-    height: 150%;
-    width: 100%;
-  }
-  .video-cont {
-    margin-top: 20%;
-    margin-bottom: 50%;
-  }
-}
-@media (max-width: 800px) {
-  .settings {
-    margin-top: 3%;
-  }
-  .landing_time {
-    margin-right: 50px;
-  }
-}
-
-@media (max-width: 662px) {
-  .sideho {
-    display: none;
-  }
-  .landing_time {
-    margin-top: 10px;
-    margin-left: 5px;
-    font-size: 0.8rem;
-  }
-  .settings {
-    margin: 0% 28%;
-    margin-top: 3%;
-  }
-  .joinroom {
-    font-size: 100%;
-  }
-  .logo {
-    display: block;
-    font-size: 3rem;
-    padding-bottom: 5%;
-  }
-  .video-cont {
-    padding-left: 0;
-    margin-bottom: 50%;
-  }
-  .video-self {
-    max-height: 450px;
-  }
-  #webcam {
-    padding: 5% 7%;
-  }
-  .main {
-    padding-right: 1%;
-  }
-  .mic1 {
-    padding: 6% 9%;
-  }
-  .mic2 {
-    padding: 6% 6.5%;
-  }
-}
 
 /* room */
 .overlay {
@@ -365,15 +305,18 @@ textarea {
   background-color: #393e46;
   height: 100vh;
   padding: 50px;
+  padding-top: 25px;
   text-align: center;
   position: relative;
 }
 
 .container-room .left-cont .video-cont {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   height: 75vh;
+}
+.gridsize {
+  grid-template-columns: 1fr;
 }
 .container-room .left-cont .video-cont .video-box {
   background-color: #353b48;
@@ -410,6 +353,9 @@ textarea {
   margin-right: auto;
 }
 .container-room .left-cont .video-cont .video-box .mute-icon {
+  background-color: whitesmoke;
+  border-radius: 100%;
+  padding: 5px;
   color: #d63434;
   bottom: 10px;
   position: absolute;
@@ -455,6 +401,9 @@ textarea {
   margin-right: auto;
 }
 .container-room .left-cont .video-cont-single .video-box .mute-icon {
+  background-color: whitesmoke;
+  border-radius: 100%;
+  padding: 5px;
   color: #d63434;
   bottom: 10px;
   position: absolute;
@@ -476,7 +425,7 @@ textarea {
   padding: 10px 30px;
   justify-content: center;
 }
-.utils .audio {
+.utils .same1 {
   background-color: #3498db;
   text-align: center;
   color: white;
@@ -486,43 +435,14 @@ textarea {
   border-radius: 100px;
   transition: background-color 0.3s;
 }
-.utils .audio:hover {
+.utils .same1:hover {
   cursor: pointer;
   background-color: #393e46;
 }
 .utils .novideo {
-  background-color: #3498db;
-  text-align: center;
   margin-left: 10px;
-  color: white;
-  padding: 10px;
-  height: 40px;
-  width: 40px;
-  border-radius: 100px;
-  transition: background-color 0.3s;
 }
-.utils .novideo:hover {
-  cursor: pointer;
-  background-color: #393e46;
-}
-.utils .screenshare {
-  background-color: #d8d8d8;
-  text-align: center;
-  margin-left: 10px;
-  color: #393e46;
-  padding: 10px;
-  height: 40px;
-  width: 40px;
-  border-radius: 100px;
-  transition: background-color 0.3s;
-  transition: color 0.3s;
-}
-.utils .screenshare:hover {
-  cursor: pointer;
-  color: white;
-  background-color: #393e46;
-}
-.utils .board-icon {
+.utils .same3 {
   background-color: #d8d8d8;
   text-align: center;
   color: #393e46;
@@ -534,12 +454,12 @@ textarea {
   transition: background-color 0.3s;
   transition: color 0.3s;
 }
-.utils .board-icon:hover {
+.utils .same3:hover {
   cursor: pointer;
   color: white;
   background-color: #393e46;
 }
-.utils .cutcall {
+.utils .same2 {
   background-color: #cc4e4e;
   text-align: center;
   margin-left: 10px;
@@ -550,7 +470,7 @@ textarea {
   border-radius: 100px;
   transition: background-color 0.3s;
 }
-.utils .cutcall:hover {
+.utils .same2:hover {
   cursor: pointer;
   background-color: #393e46;
 }
@@ -791,4 +711,71 @@ textarea {
 }
 .roomcode-error {
   border-bottom: 3px solid #d31c1c;
+}
+@media (max-width: 991px) {
+  .video-self {
+    height: 150%;
+    width: 100%;
+  }
+  .video-cont {
+    margin-top: 20%;
+    margin-bottom: 50%;
+  }
+}
+@media (max-width: 800px) {
+  .settings {
+    margin-top: 3%;
+  }
+  .landing_time {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 662px) {
+  .sideho {
+    display: none;
+  }
+  .landing_time {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 0.8rem;
+  }
+  .settings {
+    margin: 0% 28%;
+    margin-top: 3%;
+  }
+  .joinroom {
+    font-size: 100%;
+  }
+  .logo {
+    display: block;
+    font-size: 3rem;
+    padding-bottom: 5%;
+  }
+  .video-cont {
+    padding-left: 0;
+    margin-bottom: 50%;
+  }
+  .video-self {
+    max-height: 450px;
+  }
+  #webcam {
+    padding: 5% 7%;
+  }
+  .main {
+    padding-right: 1%;
+  }
+  .mic1 {
+    padding: 6% 9%;
+  }
+  .mic2 {
+    padding: 6% 6.5%;
+  }
+  .container-room .left-cont .footer {
+    position: static;
+    margin-top: -20%;
+  }
+  .utils {
+    width: auto;
+  }
 }

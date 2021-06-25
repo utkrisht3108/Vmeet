@@ -31,9 +31,15 @@ createButton.addEventListener('click', (e) => {
 
   setInterval(() => {
     if (createButton.innerHTML < createroomtext) {
-      createButton.innerHTML = createroomtext.substring(0, createButton.innerHTML.length + 1);
+      createButton.innerHTML = createroomtext.substring(
+        0,
+        createButton.innerHTML.length + 1
+      );
     } else {
-      createButton.innerHTML = createroomtext.substring(0, createButton.innerHTML.length - 3);
+      createButton.innerHTML = createroomtext.substring(
+        0,
+        createButton.innerHTML.length - 3
+      );
     }
   }, 100);
 

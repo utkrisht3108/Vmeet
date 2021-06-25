@@ -13,6 +13,17 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
+document.addEventListener('keydown', function (event) {
+  if (event.ctrlKey && event.key === 'd') {
+    event.preventDefault();
+    audioButt.click();
+  }
+  if (event.ctrlKey && event.key === 'e') {
+    event.preventDefault();
+    videoButt.click();
+  }
+});
+
 nameField.addEventListener('keyup', function (event) {
   if (nameField.value.trim() !== '') {
     nameField.classList.remove('roomcode-error');
@@ -36,7 +47,7 @@ messageField.addEventListener('keyup', function (event) {
 
 sendButton.addEventListener('click', () => {
   const msg = messageField.value;
-  if (msg.length == 0) return;
+  if (msg.trim() === '') return;
   messageField.value = '';
   // console.log(msg + ' ' + username + ' ' + roomid + ' ' + socket.id);
   socket.emit('message', msg, username, roomid);
@@ -49,11 +60,15 @@ editButton.addEventListener('click', function (event) {
 document.addEventListener('keyup', function (event) {
   if (event.key === 'Escape') {
     overlayContainer.style.visibility = 'hidden';
+    //connect room
+    socket.emit('join room', roomid, username);
   }
 });
 
 backButton.addEventListener('click', function (event) {
   overlayContainer.style.visibility = 'hidden';
+  //connect room
+  socket.emit('join room', roomid, username);
 });
 
 continueButt.addEventListener('click', () => {
@@ -65,8 +80,90 @@ continueButt.addEventListener('click', () => {
   overlayContainer.style.visibility = 'hidden';
   document.querySelector('#myname').innerHTML = `${username} (You)`;
   //connect room
+  socket.emit('join room', roomid, username);
+});
+
+//media
+
+videoButt.addEventListener('click', () => {
+  if (videoAllowed) {
+    for (let key in videoTrackSent) {
+      videoTrackSent[key].enabled = false;
+    }
+    videoButt.innerHTML = `<i class="fas fa-video-slash"></i>`;
+    videoAllowed = 0;
+    videoButt.style.backgroundColor = '#393e46';
+
+    if (mystream) {
+      mystream.getTracks().forEach((track) => {
+        if (track.kind === 'video') {
+          track.enabled = false;
+        }
+      });
+    }
+
+    myvideooff.style.visibility = 'visible';
+
+    socket.emit('action', 'videooff');
+  } else {
+    for (let key in videoTrackSent) {
+      videoTrackSent[key].enabled = true;
+    }
+    videoButt.innerHTML = `<i class="fas fa-video"></i>`;
+    videoAllowed = 1;
+    videoButt.style.backgroundColor = '#3498db';
+    if (mystream) {
+      mystream.getTracks().forEach((track) => {
+        if (track.kind === 'video') track.enabled = true;
+      });
+    }
+
+    myvideooff.style.visibility = 'hidden';
+
+    socket.emit('action', 'videoon');
+  }
+});
+
+audioButt.addEventListener('click', () => {
+  if (audioAllowed) {
+    for (let key in audioTrackSent) {
+      audioTrackSent[key].enabled = false;
+    }
+    audioButt.innerHTML = `<i class="fas fa-microphone-slash"></i>`;
+    audioAllowed = 0;
+    audioButt.style.backgroundColor = '#393e46';
+    if (mystream) {
+      mystream.getTracks().forEach((track) => {
+        if (track.kind === 'audio') track.enabled = false;
+      });
+    }
+
+    mymuteicon.style.visibility = 'visible';
+
+    socket.emit('action', 'mute');
+  } else {
+    for (let key in audioTrackSent) {
+      audioTrackSent[key].enabled = true;
+    }
+    audioButt.innerHTML = `<i class="fas fa-microphone"></i>`;
+    audioAllowed = 1;
+    audioButt.style.backgroundColor = '#3498db';
+    if (mystream) {
+      mystream.getTracks().forEach((track) => {
+        if (track.kind === 'audio') track.enabled = true;
+      });
+    }
+
+    mymuteicon.style.visibility = 'hidden';
+
+    socket.emit('action', 'unmute');
+  }
 });
 
 cutCall.addEventListener('click', () => {
   location.href = '/';
+});
+
+attendies.addEventListener('click', () => {
+  console.log(participants);
 });
