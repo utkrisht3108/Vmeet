@@ -7,7 +7,8 @@ document.addEventListener('keydown', function (event) {
 });
 
 document.addEventListener('keydown', function (event) {
-  if (event.ctrlKey && event.key === 'c') {
+  if (event.ctrlKey && event.key === 'b') {
+    console.log('hihi');
     event.preventDefault();
     CopyClassText();
   }
@@ -61,17 +62,18 @@ document.addEventListener('keyup', function (event) {
   if (event.key === 'Escape') {
     overlayContainer.style.visibility = 'hidden';
     //connect room
-    socket.emit('join room', roomid, username);
+    if (participants.length == 0) socket.emit('join room', roomid, username);
   }
 });
 
 backButton.addEventListener('click', function (event) {
   overlayContainer.style.visibility = 'hidden';
   //connect room
-  socket.emit('join room', roomid, username);
+  if (participants.length == 0) socket.emit('join room', roomid, username);
 });
 
 continueButt.addEventListener('click', () => {
+  // socket.emit('remove peer', roomid, username);
   if (nameField.value.trim() === '') {
     nameField.classList.add('roomcode-error');
     return;
@@ -80,7 +82,9 @@ continueButt.addEventListener('click', () => {
   overlayContainer.style.visibility = 'hidden';
   document.querySelector('#myname').innerHTML = `${username} (You)`;
   //connect room
+  
   socket.emit('join room', roomid, username);
+  //edit bug fix later
 });
 
 //media
@@ -162,8 +166,4 @@ audioButt.addEventListener('click', () => {
 
 cutCall.addEventListener('click', () => {
   location.href = '/';
-});
-
-attendies.addEventListener('click', () => {
-  console.log(participants);
 });

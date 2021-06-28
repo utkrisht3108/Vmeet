@@ -156,7 +156,8 @@ textarea {
   outline: none;
 }
 .video-cont {
-  padding-left: 5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
 }
 .video-self {
   height: 100%;
@@ -218,6 +219,7 @@ textarea {
   height: 100%;
   width: 100%;
   background-color: #393e46;
+  opacity: 99%;
 }
 .overlay .box {
   width: 50%;
@@ -304,8 +306,9 @@ textarea {
   width: 80%;
   background-color: #393e46;
   height: 100vh;
-  padding: 50px;
-  padding-top: 25px;
+    padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
   text-align: center;
   position: relative;
 }
@@ -478,7 +481,7 @@ textarea {
 .container-room .right-cont {
   width: 25%;
   background-color: #121212;
-  height: 100vh;
+  height: 84vh;
 }
 .container-room .right-cont ::-webkit-scrollbar {
   width: 10px;
@@ -502,7 +505,7 @@ textarea {
 }
 .container-room .right-cont .head-title .chats {
   padding: 10px;
-  padding-top: 20px;
+  padding-top: 15px;
   width: 100%;
   text-align: left;
   margin-left: 2%;
@@ -519,14 +522,15 @@ textarea {
   background-color: #121212;
   height: 84vh;
   padding: 10px;
-  padding-top: 10px;
+  padding-bottom: 40px;
   overflow-y: scroll;
 }
 .copycode-cont {
   display: flex;
   position: absolute;
-  left: 0;
-  margin-top: 2.5px;
+  /* left: 20px; */
+  left: 2.5%;
+  margin-top: 1.5px;
   padding-bottom: 5px;
 }
 .copycode-cont .roomcode {
@@ -717,7 +721,7 @@ textarea {
     height: 150%;
     width: 100%;
   }
-  .video-cont {
+  .video-cont1 {
     margin-top: 20%;
     margin-bottom: 50%;
   }
@@ -752,7 +756,7 @@ textarea {
     font-size: 3rem;
     padding-bottom: 5%;
   }
-  .video-cont {
+  .video-cont1 {
     padding-left: 0;
     margin-bottom: 50%;
   }
@@ -773,9 +777,9 @@ textarea {
   }
   .container-room .left-cont .footer {
     position: static;
-    margin-top: -20%;
+    /* margin-top: -20%; */
   }
-  .utils {
+  /* .utils {
     width: auto;
-  }
+  } */
 }

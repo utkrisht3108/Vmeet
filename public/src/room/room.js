@@ -150,7 +150,7 @@ function handleVideoOffer(offer, sid, cname, micinf, vidinf) {
   connections[sid].onremovetrack = function (event) {
     if (document.getElementById(sid)) {
       document.getElementById(sid).remove();
-      console.log('removed a track');
+      console.log('removed track');
     }
   };
 
@@ -225,6 +225,9 @@ socket.on('new icecandidate', handleNewIceCandidate);
 socket.on('video-answer', handleVideoAnswer);
 
 socket.on('remove peer', (sid) => {
+  // participants.
+  const pindex = participants.indexOf(cName[sid]);
+  participants.splice(pindex, 1);
   if (document.getElementById(sid)) {
     document.getElementById(sid).remove();
   }
@@ -233,4 +236,4 @@ socket.on('remove peer', (sid) => {
 
 //////TODO -tom//////
 //remove participants daalna hai and then overlay mai add karna hai
-//click to download excel file 
+//click to download excel file
