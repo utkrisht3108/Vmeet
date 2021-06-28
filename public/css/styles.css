@@ -30,6 +30,7 @@ body {
   padding: 10px;
 }
 .chota {
+  color: #121212;
   font-size: 12px;
   padding: 10px;
 }
@@ -306,7 +307,7 @@ textarea {
   width: 80%;
   background-color: #393e46;
   height: 100vh;
-    padding-left: 20px;
+  padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
   text-align: center;
@@ -671,34 +672,9 @@ textarea {
   color: #121212;
   margin-left: -135px;
 }
-.edit-icon {
-  background-color: #121212;
-  border: none;
-  font-size: 2rem;
-  padding: 0 15px;
-}
-.edit-icon:hover {
-  color: #fff;
-}
-.edit-icon::after {
-  border: none;
-}
 .icon-hover:hover .icon-hover-text {
   visibility: visible;
   opacity: 0.8;
-}
-.backButton {
-  position: absolute;
-  left: 20px;
-  top: 10px;
-  background-color: #393e46;
-  outline: none;
-  border: none;
-  font-size: 3rem;
-}
-.backButton:hover {
-  font-size: 3.3rem;
-  transition: 0.2s;
 }
 
 @media (max-width: 700px) {

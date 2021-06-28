@@ -54,9 +54,9 @@ sendButton.addEventListener('click', () => {
   socket.emit('message', msg, username, roomid);
 });
 
-editButton.addEventListener('click', function (event) {
-  overlayContainer.style.visibility = 'visible';
-});
+// editButton.addEventListener('click', function (event) {
+//   overlayContainer.style.visibility = 'visible';
+// });
 
 document.addEventListener('keyup', function (event) {
   if (event.key === 'Escape') {
@@ -66,11 +66,11 @@ document.addEventListener('keyup', function (event) {
   }
 });
 
-backButton.addEventListener('click', function (event) {
-  overlayContainer.style.visibility = 'hidden';
-  //connect room
-  if (participants.length == 0) socket.emit('join room', roomid, username);
-});
+// backButton.addEventListener('click', function (event) {
+//   overlayContainer.style.visibility = 'hidden';
+//   //connect room
+//   if (participants.length == 0) socket.emit('join room', roomid, username);
+// });
 
 continueButt.addEventListener('click', () => {
   // socket.emit('remove peer', roomid, username);
@@ -81,8 +81,8 @@ continueButt.addEventListener('click', () => {
   username = nameField.value;
   overlayContainer.style.visibility = 'hidden';
   document.querySelector('#myname').innerHTML = `${username} (You)`;
+
   //connect room
-  
   socket.emit('join room', roomid, username);
   //edit bug fix later
 });

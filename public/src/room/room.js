@@ -8,11 +8,11 @@ const videoContainer = document.querySelector('#vcont');
 const overlayContainer = document.querySelector('#overlay');
 const continueButt = document.querySelector('.continue-name');
 const nameField = document.querySelector('#name-field');
-const editButton = document.querySelector('.edit-icon');
+// const editButton = document.querySelector('.edit-icon');
 const videoButt = document.querySelector('.novideo');
 const audioButt = document.querySelector('.audio');
 const cutCall = document.querySelector('.cutcall');
-const backButton = document.querySelector('.backButton');
+// const backButton = document.querySelector('.backButton');
 const screenShareButt = document.querySelector('.screenshare');
 const whiteboardButt = document.querySelector('.board-icon');
 const attendies = document.querySelector('.attendies');
@@ -234,6 +234,11 @@ socket.on('remove peer', (sid) => {
   delete connections[sid];
 });
 
-//////TODO -tom//////
-//remove participants daalna hai and then overlay mai add karna hai
-//click to download excel file
+//TODO
+/*
+participants overlay
+participants bug(not sure if there)
+participants pdf/excel add
+white board
+host
+*/
