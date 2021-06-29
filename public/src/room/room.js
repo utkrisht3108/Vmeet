@@ -22,6 +22,7 @@ const errormsg = document.querySelector('.errormsg');
 const partOverlay = document.querySelector('#attendies_overlay');
 const participantsHead = document.querySelector('.participants_heading');
 const participantsCont = document.querySelector('.participants_cont');
+const downloadBtn = document.querySelector('.downloadbtn');
 
 partOverlay.style.visibility = 'hidden';
 
@@ -244,7 +245,6 @@ socket.on('remove peer', (sid) => {
 
 //TODO
 /*
-participants pdf/excel add
 white board
 screen share(if possible)
 host

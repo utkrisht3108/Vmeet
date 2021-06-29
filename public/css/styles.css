@@ -262,6 +262,20 @@ textarea {
   overflow-y: scroll;
   padding-bottom: 40px;
 }
+.downloadbtn {
+  padding-top: 20px;
+  text-align: left;
+  margin-left: 3%;
+}
+.dbtn {
+  background-color: #3498db;
+  color: #121212;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.btn:focus {
+  outline: 0;
+}
 .overlay .box .participants_heading {
   width: 100%;
   margin-top: 3%;

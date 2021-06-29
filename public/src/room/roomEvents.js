@@ -184,3 +184,19 @@ audioButt.addEventListener('click', () => {
 cutCall.addEventListener('click', () => {
   location.href = '/';
 });
+
+downloadBtn.addEventListener('click', () => {
+  var csv = 'Name\n';
+
+  participants.forEach(function (row) {
+    csv += row;
+    csv += '\n';
+  });
+
+  var hiddenElement = document.createElement('a');
+  hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+  hiddenElement.target = '_blank';
+
+  hiddenElement.download = `${roomid}-Attendies.csv`;
+  hiddenElement.click();
+});
