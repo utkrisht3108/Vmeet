@@ -17,13 +17,15 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
 
       connections[sid].onicecandidate = function (event) {
         if (event.candidate) {
-          console.log('icecandidate fired');
+          // console.log('icecandidate fired aloo');
           socket.emit('new icecandidate', event.candidate, sid);
         }
       };
       connections[sid].ontrack = function (event) {
+        // console.log('aahah');
         if (!document.getElementById(sid)) {
-          console.log('track event fired');
+          //jo join kar chuke hai pehle se vo yaha se aayega
+          // console.log('track event fired check');
           let vidCont = document.createElement('div');
           let newvideo = document.createElement('video');
           let name = document.createElement('div');
@@ -73,12 +75,14 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
       };
 
       connections[sid].onnegotiationneeded = function () {
+        // console.log('neg');
         connections[sid]
           .createOffer()
           .then(function (offer) {
             return connections[sid].setLocalDescription(offer);
           })
           .then(function () {
+            // console.log(connections[sid].localDescription + ' ' + sid);
             socket.emit('video-offer', connections[sid].localDescription, sid);
           })
           .catch(reportError);

@@ -250,6 +250,56 @@ textarea {
   font-size: 1.5rem;
   color: #fff;
 }
+.attendies_head {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+  border-radius: 5%;
+}
+.participants_head {
+  text-align: left;
+}
+.attendies_overlay {
+  overflow-y: scroll;
+  padding-bottom: 40px;
+}
+.overlay .box .participants_heading {
+  width: 100%;
+  margin-top: 3%;
+  margin-left: 3%;
+  font-size: 2rem;
+}
+.participants_cont {
+  height: 200%;
+  margin-top: 6%;
+  margin-left: 3%;
+}
+.participants_name {
+  color: #dddddd;
+  font-size: 2rem;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #393e46;
+}
+.backButton {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  background-color: #393e46;
+  outline: none;
+  border: none;
+  font-size: 3rem;
+}
+.backButton:hover {
+  font-size: 3.3rem;
+  transition: 0.2s;
+}
+.errormsg {
+  visibility: hidden;
+  text-align: left;
+  color: #d31c1c;
+  padding-top: 10px;
+  width: 90%;
+  margin: 0px auto;
+}
 .name-field {
   margin: 0px auto;
   margin-top: 10px;

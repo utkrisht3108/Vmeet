@@ -8,7 +8,6 @@ document.addEventListener('keydown', function (event) {
 
 document.addEventListener('keydown', function (event) {
   if (event.ctrlKey && event.key === 'b') {
-    console.log('hihi');
     event.preventDefault();
     CopyClassText();
   }
@@ -23,8 +22,21 @@ document.addEventListener('keydown', function (event) {
     event.preventDefault();
     videoButt.click();
   }
+  if (event.ctrlKey && event.key === 'l') {
+    event.preventDefault();
+    if (partOverlay.style.visibility === 'hidden') {
+      attendies.click();
+    } else {
+      partOverlay.style.visibility = 'hidden';
+    }
+  }
 });
 
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    partOverlay.style.visibility = 'hidden';
+  }
+});
 nameField.addEventListener('keyup', function (event) {
   if (nameField.value.trim() !== '') {
     nameField.classList.remove('roomcode-error');
@@ -32,6 +44,15 @@ nameField.addEventListener('keyup', function (event) {
   if (nameField.value.trim() === '') {
     nameField.classList.add('roomcode-error');
     return;
+  }
+  if (nameField.value.trim().length > 20) {
+    nameField.classList.add('roomcode-error');
+    errormsg.style.visibility = 'visible';
+    return;
+  }
+  if (nameField.value.trim().length <= 20) {
+    nameField.classList.remove('roomcode-error');
+    errormsg.style.visibility = 'hidden';
   }
   if (event.keyCode === 13) {
     event.preventDefault();
@@ -58,24 +79,20 @@ sendButton.addEventListener('click', () => {
 //   overlayContainer.style.visibility = 'visible';
 // });
 
-document.addEventListener('keyup', function (event) {
-  if (event.key === 'Escape') {
-    overlayContainer.style.visibility = 'hidden';
-    //connect room
-    if (participants.length == 0) socket.emit('join room', roomid, username);
-  }
+backButton.addEventListener('click', function (event) {
+  partOverlay.style.visibility = 'hidden';
 });
-
-// backButton.addEventListener('click', function (event) {
-//   overlayContainer.style.visibility = 'hidden';
-//   //connect room
-//   if (participants.length == 0) socket.emit('join room', roomid, username);
-// });
 
 continueButt.addEventListener('click', () => {
   // socket.emit('remove peer', roomid, username);
   if (nameField.value.trim() === '') {
     nameField.classList.add('roomcode-error');
+    return;
+  }
+
+  if (nameField.value.trim().length > 20) {
+    nameField.classList.add('roomcode-error');
+    errormsg.style.visibility = 'visible';
     return;
   }
   username = nameField.value;

@@ -27,12 +27,7 @@
   <body>
     <div class="overlay" id="overlay">
       <div class="box">
-        <div class="head-name">
-          <!-- <button class="backButton">
-            <i class="fas fa-angle-left"></i>
-          </button> -->
-          Edit Details
-        </div>
+        <div class="head-name">Edit Details</div>
         <div class="heading">Enter your name</div>
         <input
           type="text"
@@ -41,7 +36,20 @@
           autocomplete="off"
           id="name-field"
         /><br />
+        <div class="errormsg">Max char: 20 *</div>
         <button class="continue-name">Enter</button>
+      </div>
+    </div>
+    <div class="overlay attendies_overlay" id="attendies_overlay">
+      <div class="box">
+        <div class="head-name attendies_head">
+          PARTICIPANTS
+          <button class="backButton">
+            <i class="fas fa-angle-left"></i>
+          </button>
+        </div>
+        <div class="heading participants_heading"></div>
+        <div class="participants_cont"></div>
       </div>
     </div>
     <div class="container-room">
@@ -101,23 +109,27 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <p class="dropdown-item chota" href="#">
                 Microphone On/Off
-                <i class="fas fa-arrow-right"></i> Ctrl+d
+                <i class="fas fa-arrow-right"></i> Ctrl + D
               </p>
               <p class="dropdown-item chota" href="#">
                 Camera On/Off
-                <i class="fas fa-arrow-right"></i> Ctrl+e
+                <i class="fas fa-arrow-right"></i> Ctrl + E
+              </p>
+              <p class="dropdown-item chota" href="#">
+                Show Participants
+                <i class="fas fa-arrow-right"></i> Ctrl + L
               </p>
               <p class="dropdown-item chota" href="#">
                 Enter Room Code
-                <i class="fas fa-arrow-right"></i> Ctrl+/
+                <i class="fas fa-arrow-right"></i> Ctrl + /
               </p>
               <p class="dropdown-item chota" href="#">
                 Copy Room Code
-                <i class="fas fa-arrow-right"></i> Ctrl+C
+                <i class="fas fa-arrow-right"></i> Ctrl + B
               </p>
               <p class="dropdown-item chota" href="#">
                 Open Chat
-                <i class="fas fa-arrow-right"></i> Ctrl+/
+                <i class="fas fa-arrow-right"></i> Ctrl + /
               </p>
               <p class="dropdown-item chota" href="#">
                 Send Message

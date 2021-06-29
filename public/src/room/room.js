@@ -12,11 +12,18 @@ const nameField = document.querySelector('#name-field');
 const videoButt = document.querySelector('.novideo');
 const audioButt = document.querySelector('.audio');
 const cutCall = document.querySelector('.cutcall');
-// const backButton = document.querySelector('.backButton');
+const backButton = document.querySelector('.backButton');
 const screenShareButt = document.querySelector('.screenshare');
 const whiteboardButt = document.querySelector('.board-icon');
 const attendies = document.querySelector('.attendies');
 const gridsize = document.querySelector('.gridsize');
+const errormsg = document.querySelector('.errormsg');
+
+const partOverlay = document.querySelector('#attendies_overlay');
+const participantsHead = document.querySelector('.participants_heading');
+const participantsCont = document.querySelector('.participants_cont');
+
+partOverlay.style.visibility = 'hidden';
 
 let username = 'GUEST';
 const roomid = params.get('room');
@@ -90,21 +97,22 @@ function handleVideoOffer(offer, sid, cname, micinf, vidinf) {
   cName[sid] = cname;
   participants.push(cname);
   gridcheck();
-  console.log('video offered recevied');
+  // console.log('video offered recevied hua');
   micInfo[sid] = micinf;
   videoInfo[sid] = vidinf;
   connections[sid] = new RTCPeerConnection(configuration);
 
   connections[sid].onicecandidate = function (event) {
     if (event.candidate) {
-      console.log('icecandidate fired ababababa');
+      // console.log('icecandidate fired ababababa');
       socket.emit('new icecandidate', event.candidate, sid);
     }
   };
 
   connections[sid].ontrack = function (event) {
     if (!document.getElementById(sid)) {
-      console.log('track event fired');
+      // abhi jo join kiya vo yaha se jayega
+      // console.log('track event fired');
       let vidCont = document.createElement('div');
       let newvideo = document.createElement('video');
       let name = document.createElement('div');
@@ -176,7 +184,7 @@ function handleVideoOffer(offer, sid, cname, micinf, vidinf) {
     .then((localStream) => {
       localStream.getTracks().forEach((track) => {
         connections[sid].addTrack(track, localStream);
-        console.log('added local stream to peer');
+        // console.log('added local stream to peer');
         if (track.kind === 'audio') {
           audioTrackSent[sid] = track;
           if (!audioAllowed) {
@@ -203,14 +211,14 @@ function handleVideoOffer(offer, sid, cname, micinf, vidinf) {
 }
 
 function handleNewIceCandidate(candidate, sid) {
-  console.log('new candidate recieved');
+  // console.log('new candidate recieved');
   var newcandidate = new RTCIceCandidate(candidate);
 
   connections[sid].addIceCandidate(newcandidate).catch(reportError);
 }
 
 function handleVideoAnswer(answer, sid) {
-  console.log('answered the offer');
+  // console.log('answered the offer');
   const ans = new RTCSessionDescription(answer);
   connections[sid].setRemoteDescription(ans);
 }
@@ -236,9 +244,8 @@ socket.on('remove peer', (sid) => {
 
 //TODO
 /*
-participants overlay
-participants bug(not sure if there)
 participants pdf/excel add
 white board
+screen share(if possible)
 host
 */
