@@ -24,6 +24,10 @@ const participantsHead = document.querySelector('.participants_heading');
 const participantsCont = document.querySelector('.participants_cont');
 const downloadBtn = document.querySelector('.downloadbtn');
 
+const whiteboardCont = document.querySelector('.whiteboard-cont');
+const canvas = document.querySelector('#whiteboard');
+const ctx = canvas.getContext('2d');
+
 partOverlay.style.visibility = 'hidden';
 
 let username = 'GUEST';
@@ -245,7 +249,6 @@ socket.on('remove peer', (sid) => {
 
 //TODO
 /*
-white board
 screen share(if possible)
 host
 */

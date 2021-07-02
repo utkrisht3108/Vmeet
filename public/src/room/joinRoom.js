@@ -3,6 +3,7 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
   //   console.log(cnames);
   //   console.log(micinfo);
   //   console.log(videoinfo);
+  socket.emit('getCanvas');
 
   if (cnames) cName = cnames;
 

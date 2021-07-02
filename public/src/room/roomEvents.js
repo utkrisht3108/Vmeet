@@ -30,6 +30,10 @@ document.addEventListener('keydown', function (event) {
       partOverlay.style.visibility = 'hidden';
     }
   }
+  if (event.ctrlKey && event.key === 'y') {
+    event.preventDefault();
+    whiteboardButt.click();
+  }
 });
 
 document.addEventListener('keydown', function (event) {
@@ -199,4 +203,14 @@ downloadBtn.addEventListener('click', () => {
 
   hiddenElement.download = `${roomid}-Attendies.csv`;
   hiddenElement.click();
+});
+
+whiteboardButt.addEventListener('click', () => {
+  if (boardVisisble) {
+    whiteboardCont.style.visibility = 'hidden';
+    boardVisisble = false;
+  } else {
+    whiteboardCont.style.visibility = 'visible';
+    boardVisisble = true;
+  }
 });

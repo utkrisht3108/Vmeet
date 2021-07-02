@@ -67,6 +67,31 @@
             <div class="video-off" id="myvideooff">Video Off</div>
           </div>
         </div>
+        <div class="whiteboard-cont">
+          <canvas id="whiteboard" height="600" width="1000"></canvas>
+          <div class="colors-cont">
+            <button class="color black" onclick="setColor('black')"></button>
+            <button class="color red" onclick="setColor('red')"></button>
+            <button class="color yellow" onclick="setColor('yellow')"></button>
+            <button class="color green" onclick="setColor('green')"></button>
+            <button class="color blue" onclick="setColor('#3498db')"></button>
+            <button class="color orange" onclick="setColor('#e67e22')"></button>
+            <button class="color brown" onclick="setColor('#834c32')"></button>
+            <button class="color grey" onclick="setColor('gray')"></button>
+            <button class="plusSize sizeBtn" onclick="plusSize()">
+              <i class="fas fa-plus"></i>
+            </button>
+            <button class="minusSize sizeBtn" onclick="minusSize()">
+              <i class="fas fa-minus"></i>
+            </button>
+            <div class="extra eraser" onclick="setEraser()">
+              <i class="color fas fa-eraser"></i>
+            </div>
+            <div class="extra clearboard" onclick="clearBoard()">
+              <i class="color fas fa-trash-alt"></i>
+            </div>
+          </div>
+        </div>
         <div class="footer">
           <div class="copycode-cont">
             <div class="roomcode">000000</div>
@@ -123,6 +148,10 @@
                 <i class="fas fa-arrow-right"></i> Ctrl + L
               </p>
               <p class="dropdown-item chota" href="#">
+                Open Whiteboard
+                <i class="fas fa-arrow-right"></i> Ctrl + Y
+              </p>
+              <p class="dropdown-item chota" href="#">
                 Enter Room Code
                 <i class="fas fa-arrow-right"></i> Ctrl + /
               </p>
@@ -162,5 +191,6 @@
     <script src="src/room/error.js"></script>
     <script src="src/room/gridcheck.js"></script>
     <script src="src/room/users.js"></script>
+    <script src="src/room/whiteboard.js"></script>
   </body>
 </html>

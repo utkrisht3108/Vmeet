@@ -18,6 +18,7 @@ let socketroom = {};
 let socketname = {};
 let micSocket = {};
 let videoSocket = {};
+let roomBoard = {};
 
 const admin = 'VMEET';
 
@@ -78,6 +79,29 @@ io.on('connect', (socket) => {
     io.to(roomid).emit('message', formatMessage(msg, username));
   });
 
+  //whiteboard
+  socket.on('getCanvas', () => {
+    if (roomBoard[socketroom[socket.id]]) {
+      // console.log('ghus ' + socket.id);
+      socket.emit('getCanvas', roomBoard[socketroom[socket.id]]);
+    }
+  });
+
+  socket.on('draw', (newx, newy, prevx, prevy, color, size) => {
+    // console.log('chalu kar');
+    socket.to(socketroom[socket.id]).emit('draw', newx, newy, prevx, prevy, color, size);
+  });
+
+  socket.on('clearBoard', () => {
+    socket.to(socketroom[socket.id]).emit('clearBoard');
+  });
+
+  socket.on('store canvas', (url) => {
+    // console.log('save kar--' + socket.id);
+    roomBoard[socketroom[socket.id]] = url;
+  });
+
+  ////
   socket.on('disconnect', () => {
     if (!socketroom[socket.id]) return;
     socket
