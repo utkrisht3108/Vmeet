@@ -125,3 +125,12 @@ socket.on('draw', (newX, newY, prevX, prevY, color, size) => {
   drawsizeRemote = size;
   drawRemote(newX, newY, prevX, prevY);
 });
+
+//dowload
+function downloadCanvas() {
+  image = canvas.toDataURL('image/jpg').replace('image/jpg', 'image/octet-stream');
+  var link = document.createElement('a');
+  link.download = 'whiteboard.jpg';
+  link.href = image;
+  link.click();
+}

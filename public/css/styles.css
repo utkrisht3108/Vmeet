@@ -498,7 +498,7 @@ textarea {
 .container-room .left-cont .whiteboard-cont .colors-cont {
   position: absolute;
   right: 50px;
-  top: 60px;
+  top: 43px;
   display: flex;
   flex-direction: column;
 }
@@ -532,31 +532,45 @@ textarea {
 .grey {
   background-color: grey;
 }
-
 .extra {
   height: 25px;
   width: 25px;
-  margin-top: 13px;
-  font-size: 25px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+.downloadCanvas {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 22px;
+  border: 0;
+  background-color: none;
+}
+.downloadCanvas:hover {
+  cursor: pointer;
+  font-size: 24px;
+  transition: 0.3s;
 }
 .extra:hover {
   cursor: pointer;
+  font-size: 24px;
+  transition: 0.3s;
 }
 .sizeBtn {
   background-color: black;
   color: white;
   font-weight: bold;
+  font-size: 15px;
   border-radius: 3px;
-  border: 3px solid #121212;
+  border: 2px solid #121212;
 }
 .plusSize {
   margin-top: 25px;
 }
 .minusSize {
-  margin-top: 5px;
+  margin-top: 8px;
 }
 .eraser {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .container-room .left-cont .footer {
   position: relative;
