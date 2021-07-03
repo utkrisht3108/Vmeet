@@ -18,6 +18,7 @@ const whiteboardButt = document.querySelector('.board-icon');
 const attendies = document.querySelector('.attendies');
 const gridsize = document.querySelector('.gridsize');
 const errormsg = document.querySelector('.errormsg');
+const chatButton = document.querySelector('.chatButton');
 
 const partOverlay = document.querySelector('#attendies_overlay');
 const participantsHead = document.querySelector('.participants_heading');
@@ -241,6 +242,7 @@ socket.on('remove peer', (sid) => {
   // participants.
   const pindex = participants.indexOf(cName[sid]);
   participants.splice(pindex, 1);
+  gridcheck();
   if (document.getElementById(sid)) {
     document.getElementById(sid).remove();
   }

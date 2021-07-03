@@ -12,10 +12,11 @@ function gridcheck() {
     if (pcount == 2) {
       sizeCheck(f);
       $(window).resize(() => {
-        sizeCheck(f);
+        if (pcount == 2) sizeCheck(f);
       });
     } else {
       gridsize.style.gridTemplateColumns = f;
+      gridsize.style.gridTemplateRows = '';
     }
   }
 }
@@ -23,9 +24,9 @@ function gridcheck() {
 function sizeCheck(f) {
   if ($(window).width() > 600) {
     gridsize.style.gridTemplateColumns = f;
-    gridsize.style.gridTemplateRows = '1fr';
+    gridsize.style.gridTemplateRows = '';
   } else {
     gridsize.style.gridTemplateRows = f;
-    gridsize.style.gridTemplateColumns = '1fr';
+    gridsize.style.gridTemplateColumns = '';
   }
 }

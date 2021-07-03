@@ -356,16 +356,16 @@ textarea {
   background-color: #121212;
 }
 .container-room ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 .container-room ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #121212;
 }
 .container-room ::-webkit-scrollbar-thumb {
-  background: #c5c5c5;
+  background: #121212;
 }
 .container-room ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #3498db;
 }
 .container-room .left-cont {
   width: 80%;
@@ -408,6 +408,7 @@ textarea {
   position: absolute;
   left: 10px;
   bottom: 10px;
+  font-weight: bold;
 }
 .container-room .left-cont .video-cont .video-box .video-off {
   color: white;
@@ -650,16 +651,16 @@ textarea {
   height: 84vh;
 }
 .container-room .right-cont ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
 }
 .container-room .right-cont ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #121212;
 }
 .container-room .right-cont ::-webkit-scrollbar-thumb {
-  background: #c5c5c5;
+  background: #3498db;
 }
 .container-room .right-cont ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #034777;
 }
 .container-room .right-cont .head-title {
   font-weight: bold;
@@ -841,18 +842,6 @@ textarea {
   opacity: 0.8;
 }
 
-@media (max-width: 700px) {
-  .overlay .box {
-    width: 75%;
-  }
-  .container-room .left-cont {
-    width: 100%;
-  }
-  .container-room .right-cont {
-    display: none;
-    width: 100%;
-  }
-}
 .roomcode-error {
   border-bottom: 3px solid #d31c1c;
 }
@@ -874,10 +863,41 @@ textarea {
     margin-right: 50px;
   }
 }
+.chatButton {
+  position: absolute;
+  background-color: white;
+  color: #121212;
+  z-index: 10;
+  right: 0;
+  padding: 11px 9px;
+  top: 37%;
+  display: none;
+}
+@media (max-width: 700px) {
+  .chatButton {
+    display: flex;
+  }
 
+  .overlay .box {
+    width: 75%;
+  }
+  .container-room .left-cont {
+    width: 100%;
+  }
+  .container-room .right-cont {
+    display: none;
+    width: 100%;
+  }
+}
 @media (max-width: 662px) {
   .sideho {
     display: none;
+  }
+  .copycode-cont .roomcode {
+    font-size: 1.2rem;
+  }
+  .copycode-cont .copycode-button {
+    width: 80px;
   }
   .landing_time {
     margin-top: 10px;
