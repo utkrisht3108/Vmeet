@@ -117,7 +117,32 @@ window.addEventListener('mouseup', (e) => {
     isDrawing = 0;
   }
 });
+canvas.addEventListener('touchstart', (e) => {
+  // console.log('1');
+  touch = e.touches[0];
+  x = touch.clientX;
+  y = touch.clientY;
+  isDrawing = 1;
+});
 
+canvas.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+  if (isDrawing) {
+    // console.log(x + ' ' + y);
+    touch = e.touches[0];
+    draw(touch.clientX, touch.clientY, x, y);
+    socket.emit('draw', touch.clientX, touch.clientY, x, y, color, drawsize);
+    x = touch.clientX;
+    y = touch.clientY;
+  }
+});
+
+window.addEventListener('touchend', (e) => {
+  if (isDrawing) {
+    // console.log('3');
+    isDrawing = 0;
+  }
+});
 //dusra draw karega toh isse tere yaha ayega
 socket.on('draw', (newX, newY, prevX, prevY, color, size) => {
   //console.log('4');
