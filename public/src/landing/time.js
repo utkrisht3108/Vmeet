@@ -40,7 +40,7 @@ function showTime() {
     ' ' +
     session +
     ' • ' +
-    days[day] +
+    days[day - 1] +
     ', ' +
     months[date.getMonth()] +
     ' ' +

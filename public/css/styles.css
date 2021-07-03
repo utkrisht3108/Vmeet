@@ -433,6 +433,8 @@ textarea {
 }
 .container-room .left-cont .video-cont-single {
   height: 75vh;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
 }
 .container-room .left-cont .video-cont-single .video-box {
   background-color: #353b48;
@@ -547,12 +549,12 @@ textarea {
 }
 .downloadCanvas:hover {
   cursor: pointer;
-  font-size: 24px;
+  color: darkgrey;
   transition: 0.3s;
 }
 .extra:hover {
   cursor: pointer;
-  font-size: 24px;
+  color: darkgrey;
   transition: 0.3s;
 }
 .sizeBtn {
@@ -568,6 +570,12 @@ textarea {
 }
 .minusSize {
   margin-top: 8px;
+}
+.plusSize:hover {
+  color: #c5c5c5;
+}
+.minusSize:hover {
+  color: #c5c5c5;
 }
 .eraser {
   margin-top: 10px;
@@ -684,11 +692,10 @@ textarea {
   overflow-y: scroll;
 }
 .copycode-cont {
+  z-index: 2;
   display: flex;
   position: absolute;
-  /* left: 20px; */
-  left: 2.5%;
-  margin-top: 1.5px;
+  padding-left: 2.5%;
   padding-bottom: 5px;
 }
 .copycode-cont .roomcode {

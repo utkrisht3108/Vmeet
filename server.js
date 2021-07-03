@@ -106,7 +106,7 @@ io.on('connect', (socket) => {
     if (!socketroom[socket.id]) return;
     socket
       .to(socketroom[socket.id])
-      .emit('Adminmessage', formatMessage(`${socketname[socket.id]} left the chat.`, admin));
+      .emit('Adminmessage', formatMessage(`${socketname[socket.id]} left the room.`, admin));
     socket.to(socketroom[socket.id]).emit('remove peer', socket.id);
     var index = rooms[socketroom[socket.id]].indexOf(socket.id);
     rooms[socketroom[socket.id]].splice(index, 1);

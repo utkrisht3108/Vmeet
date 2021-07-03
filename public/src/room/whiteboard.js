@@ -112,8 +112,8 @@ canvas.addEventListener('mousemove', (e) => {
 });
 
 window.addEventListener('mouseup', (e) => {
-  //console.log('3');
   if (isDrawing) {
+    //console.log('3');
     isDrawing = 0;
   }
 });

@@ -67,7 +67,7 @@ socket.on('user count', (count) => {
     videoContainer.className = 'video-cont';
     // videoContainer.classList.add('gridsize');
   } else {
-    videoContainer.className = 'video-cont-single';
+    videoContainer.className = 'video-cont-single ';
     // videoContainer.classList.remove('gridsize');
   }
 });

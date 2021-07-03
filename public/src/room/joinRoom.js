@@ -90,11 +90,11 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
       };
     });
 
-    console.log('added all sockets to connections');
+    // console.log('added all sockets to connections');
     startCall();
   } else {
     // noo need now
-    console.log('waiting for someone to join');
+    // console.log('waiting for someone to join');
     navigator.mediaDevices
       .getUserMedia(mediaConstraints)
       .then((localStream) => {
