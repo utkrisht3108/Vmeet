@@ -3,8 +3,6 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
   //   console.log(cnames);
   //   console.log(micinfo);
   //   console.log(videoinfo);
-  socket.emit('getCanvas');
-
   if (cnames) cName = cnames;
 
   if (micinfo) micInfo = micinfo;
@@ -92,6 +90,12 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
 
     // console.log('added all sockets to connections');
     startCall();
+    if (participants.length == 1) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      socket.emit('store canvas', canvas.toDataURL());
+      socket.emit('clearBoard');
+    }
+    socket.emit('getCanvas');
   } else {
     // noo need now
     // console.log('waiting for someone to join');

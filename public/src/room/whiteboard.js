@@ -9,7 +9,6 @@ let color = 'black';
 let drawsize = 3;
 let colorRemote = 'black';
 let drawsizeRemote = 3;
-
 function fitToContainer(cansize) {
   cansize.style.width = '101%';
   cansize.style.height = '105%';
@@ -31,10 +30,12 @@ socket.on('getCanvas', (url) => {
   img.src = url;
 
   function start() {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(img, 0, 0);
   }
 
-  //console.log('got canvas');
+  // console.log('got canvas');
 });
 
 function setColor(newcolor) {
@@ -155,7 +156,7 @@ socket.on('draw', (newX, newY, prevX, prevY, color, size) => {
 function downloadCanvas() {
   image = canvas.toDataURL('image/jpg').replace('image/jpg', 'image/octet-stream');
   var link = document.createElement('a');
-  link.download = 'whiteboard.jpg';
+  link.download = `${roomid} - whiteboard.jpg`;
   link.href = image;
   link.click();
 }

@@ -82,6 +82,7 @@ const configuration = {
 };
 
 function startCall() {
+  console.log('chali');
   navigator.mediaDevices
     .getUserMedia(mediaConstraints)
     .then((localStream) => {
@@ -239,7 +240,6 @@ socket.on('new icecandidate', handleNewIceCandidate);
 socket.on('video-answer', handleVideoAnswer);
 
 socket.on('remove peer', (sid) => {
-  // participants.
   const pindex = participants.indexOf(cName[sid]);
   participants.splice(pindex, 1);
   gridcheck();

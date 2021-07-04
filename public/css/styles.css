@@ -33,6 +33,7 @@ body {
   color: #121212;
   font-size: 12px;
   padding: 10px;
+  font-weight: bold;
 }
 .but1 {
   cursor: pointer;
