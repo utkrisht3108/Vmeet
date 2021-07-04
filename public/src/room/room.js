@@ -82,7 +82,6 @@ const configuration = {
 };
 
 function startCall() {
-  console.log('chali');
   navigator.mediaDevices
     .getUserMedia(mediaConstraints)
     .then((localStream) => {

@@ -238,7 +238,7 @@ textarea {
   margin-left: 10px;
   color: #fff;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .overlay .box .heading {
   text-align: left;
@@ -248,7 +248,7 @@ textarea {
   font-weight: bold;
   padding-top: 10px;
   width: 90%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #fff;
 }
 .attendies_head {
@@ -272,7 +272,7 @@ textarea {
   background-color: #3498db;
   color: #121212;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .btn:focus {
   outline: 0;
@@ -281,7 +281,7 @@ textarea {
   width: 100%;
   margin-top: 3%;
   margin-left: 3%;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 .participants_cont {
   height: 200%;
@@ -290,7 +290,7 @@ textarea {
 }
 .participants_name {
   color: #dddddd;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding-bottom: 3px;
   border-bottom: 1px solid #393e46;
 }
@@ -305,7 +305,7 @@ textarea {
 }
 .backButton:hover {
   font-size: 3.3rem;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 .errormsg {
   visibility: hidden;
@@ -427,7 +427,6 @@ textarea {
   border-radius: 100%;
   padding: 5px;
   color: #d63434;
-  bottom: 10px;
   position: absolute;
   right: 10px;
   font-size: 20px;
@@ -600,11 +599,11 @@ textarea {
   background-color: #3498db;
   text-align: center;
   color: white;
-  padding: 10px;
+  padding: 9px;
   height: 40px;
   width: 40px;
   border-radius: 100px;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 .utils .same1:hover {
   cursor: pointer;
@@ -618,12 +617,11 @@ textarea {
   text-align: center;
   color: #393e46;
   margin-left: 10px;
-  padding: 10px;
+  padding: 9px;
   height: 40px;
   width: 40px;
   border-radius: 100px;
-  transition: background-color 0.3s;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 .utils .same3:hover {
   cursor: pointer;
@@ -639,7 +637,7 @@ textarea {
   height: 40px;
   width: 40px;
   border-radius: 100px;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 .utils .same2:hover {
   cursor: pointer;
@@ -677,21 +675,15 @@ textarea {
   width: 100%;
   text-align: left;
   margin-left: 2%;
-  font-size: 2rem;
-  transition: background-color 0.5s;
-}
-.container-room .right-cont .head-title .copybut {
-  background-color: #121212;
-  font-size: 2rem;
-  border: none;
-  padding: 10px;
+  font-size: 1.45rem;
+  transition: 0.5s;
 }
 .container-room .right-cont .chat-cont {
+  overflow-y: scroll;
   background-color: #121212;
   height: 83vh;
   padding: 10px;
-  padding-bottom: 40px;
-  overflow-y: scroll;
+  padding-bottom: 70px;
 }
 .copycode-cont {
   z-index: 2;
@@ -705,7 +697,7 @@ textarea {
   background-color: white;
   border-bottom: 3px solid #3498db;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -737,22 +729,22 @@ textarea {
 }
 .container-room .right-cont .chat-cont .message .info {
   display: flex;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 .container-room .right-cont .chat-cont .message .info .username {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #3498db;
 }
 .container-room .right-cont .chat-cont .message .info .time {
   margin-left: 5%;
-  font-size: 1rem;
+  font-size: 0.7rem;
   padding-top: 0.25rem;
   color: #fff;
 }
 .container-room .right-cont .chat-cont .message .content {
   margin-top: 5px;
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   color: #fff;
   padding-bottom: 5px;
   border-bottom: 1px solid #353b48;
@@ -778,7 +770,7 @@ textarea {
 .container-room .right-cont .chat-input-cont .chat-input {
   width: 100%;
   height: 36px;
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 4px 10px;
   border: none;
   border-bottom: 3px solid #3498db;
@@ -789,14 +781,14 @@ textarea {
 }
 .container-room .right-cont .chat-input-cont .chat-send {
   height: 36px;
-  padding: 5px 20px;
+  padding: 5px 18px;
   border: none;
   background-color: white;
   color: #3498db;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1rem;
   border-radius: 2px;
-  transition: background-color 0.5s;
+  transition: 0.5s;
 }
 .container-room .right-cont .chat-input-cont .chat-send:hover {
   color: #2980b9;
@@ -875,6 +867,27 @@ textarea {
   display: none;
 }
 @media (max-width: 700px) {
+  .container-room .right-cont .chat-cont {
+    height: 80vh;
+  }
+  .container-room .left-cont .whiteboard-cont .colors-cont {
+    right: 40px;
+  }
+  .plusSize {
+    font-size: 10px;
+  }
+  .minusSize {
+    font-size: 10px;
+  }
+  .color {
+    height: 20px;
+    width: 20px;
+  }
+  .extra {
+    height: 20px;
+    width: 20px;
+    margin-top: 10px;
+  }
   .chatButton {
     display: flex;
   }
@@ -891,11 +904,20 @@ textarea {
   }
 }
 @media (max-width: 662px) {
+  .overlay .box .head-name {
+    font-size: 1rem;
+  }
+  .overlay .box .heading {
+    font-size: 1rem;
+  }
+  .continue-name {
+    padding: 6px 10px;
+  }
   .sideho {
     display: none;
   }
   .copycode-cont .roomcode {
-    font-size: 1.2rem;
+    font-size: 0.7rem;
   }
   .copycode-cont .copycode-button {
     width: 80px;
