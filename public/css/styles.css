@@ -908,6 +908,49 @@ textarea {
     width: 100%;
   }
 }
+@media (min-height: 711px) and (max-width: 662px) {
+  .container-room .right-cont .chat-cont {
+    height: 70vh;
+  }
+  .container-room .left-cont .whiteboard-cont {
+    height: 70%;
+  }
+  .container-room .left-cont .video-cont-single {
+    height: 70%;
+  }
+  .container-room .left-cont .video-cont {
+    height: 70%;
+  }
+}
+
+@media (min-height: 751px) and (max-width: 662px) {
+  .container-room .right-cont .chat-cont {
+    height: 65vh;
+  }
+  .container-room .left-cont .whiteboard-cont {
+    height: 65%;
+  }
+  .container-room .left-cont .video-cont-single {
+    height: 65%;
+  }
+  .container-room .left-cont .video-cont {
+    height: 65%;
+  }
+}
+@media (min-height: 811px) and (max-width: 662px) {
+  .container-room .right-cont .chat-cont {
+    height: 70vh;
+  }
+  .container-room .left-cont .whiteboard-cont {
+    height: 70%;
+  }
+  .container-room .left-cont .video-cont-single {
+    height: 70%;
+  }
+  .container-room .left-cont .video-cont {
+    height: 70%;
+  }
+}
 .copyLink {
   display: none;
 }
