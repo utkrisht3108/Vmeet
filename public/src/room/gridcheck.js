@@ -9,10 +9,12 @@ function gridcheck() {
   let f = '';
   for (let i = 0; i < divs; i++) f += s;
   if (divs != 1) {
-    if (pcount == 2) {
+    if (participants.length == 2) {
       sizeCheck(f);
       $(window).resize(() => {
-        if (pcount == 2) sizeCheck(f);
+        if (participants.length == 2) {
+          sizeCheck(f);
+        }
       });
     } else {
       gridsize.style.gridTemplateColumns = f;
@@ -22,11 +24,13 @@ function gridcheck() {
 }
 
 function sizeCheck(f) {
-  if ($(window).width() > 500) {
-    gridsize.style.gridTemplateColumns = f;
-    gridsize.style.gridTemplateRows = '';
-  } else {
-    gridsize.style.gridTemplateRows = f;
-    gridsize.style.gridTemplateColumns = '';
+  if (participants.length == 2) {
+    if ($(window).width() > 500) {
+      gridsize.style.gridTemplateColumns = f;
+      gridsize.style.gridTemplateRows = '';
+    } else {
+      gridsize.style.gridTemplateRows = f;
+      gridsize.style.gridTemplateColumns = '';
+    }
   }
 }
