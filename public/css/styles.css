@@ -951,6 +951,20 @@ textarea {
     height: 70%;
   }
 }
+@media (min-height: 851px) and (max-width: 662px) {
+  .container-room .right-cont .chat-cont {
+    height: 80vh;
+  }
+  .container-room .left-cont .whiteboard-cont {
+    height: 80%;
+  }
+  .container-room .left-cont .video-cont-single {
+    height: 80%;
+  }
+  .container-room .left-cont .video-cont {
+    height: 80%;
+  }
+}
 .copyLink {
   display: none;
 }
