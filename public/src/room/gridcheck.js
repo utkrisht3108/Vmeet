@@ -22,7 +22,7 @@ function gridcheck() {
 }
 
 function sizeCheck(f) {
-  if ($(window).width() > 600) {
+  if ($(window).width() > 500) {
     gridsize.style.gridTemplateColumns = f;
     gridsize.style.gridTemplateRows = '';
   } else {

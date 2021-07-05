@@ -58,7 +58,6 @@
       </div>
     </div>
     <div class="container-room">
-      <button class="btn btn-lg chatButton"><i class="fas fa-comment-alt"></i></button>
       <div class="left-cont">
         <div class="copycode-cont">
           <div class="roomcode">000000</div>
@@ -110,9 +109,17 @@
             <div class="novideo same1">
               <i class="fas fa-video"></i>
             </div>
+            <div class="copyLink icon-hover same2 same4">
+              <i class="fas fa-link"></i>
+              <span class="copyCodeBtntxt icon-hover-text up">Copy Link</span>
+            </div>
             <div class="cutcall icon-hover same2">
               <i class="fas fa-phone-slash"></i>
               <span class="icon-hover-text up">Leave Call</span>
+            </div>
+            <div class="chatIcon icon-hover same2 same4">
+              <i class="fas fa-comment-alt"></i>
+              <span class="icon-hover-text up">Open Chats</span>
             </div>
             <div class="attendies icon-hover same3">
               <i class="fas fa-user-friends"></i>
@@ -129,6 +136,9 @@
       <div class="right-cont">
         <div class="head-title">
           <div class="chats"><i class="fas fa-comment-alt mr-1"></i> Chats</div>
+          <button class="btn btn-lg backIcon">
+            <i class="fas fa-arrow-circle-left"></i>
+          </button>
           <div class="dropleft sideho">
             <button
               class="btn btn-secondary color1 dropdown-toggle chota"
@@ -186,6 +196,7 @@
           </div>
         </div>
       </div>
+      <div class="roomlink"></div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="src/room/room.js"></script>

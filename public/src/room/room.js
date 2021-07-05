@@ -18,7 +18,9 @@ const whiteboardButt = document.querySelector('.board-icon');
 const attendies = document.querySelector('.attendies');
 const gridsize = document.querySelector('.gridsize');
 const errormsg = document.querySelector('.errormsg');
-const chatButton = document.querySelector('.chatButton');
+const chatIcon = document.querySelector('.chatIcon');
+const copyLink = document.querySelector('.copyLink');
+const backIcon = document.querySelector('.backIcon');
 
 const partOverlay = document.querySelector('#attendies_overlay');
 const participantsHead = document.querySelector('.participants_heading');
@@ -61,8 +63,21 @@ let participants = [];
 
 let mystream;
 
+const link = `https://vmeet1.herokuapp.com/room.html?${roomid}`;
 document.querySelector('.roomcode').innerHTML = `${roomid}`;
+document.querySelector('.roomlink').innerHTML = link;
 
+$(window).resize(() => {
+  if ($(window).width() > 662) {
+    backIcon.style.display = 'none';
+    chatIcon.style.display = 'none';
+    copyLink.style.display = 'none';
+  } else {
+    backIcon.style.display = 'block';
+    chatIcon.style.display = 'block';
+    copyLink.style.display = 'block';
+  }
+});
 socket.on('user count', (count) => {
   if (count > 1) {
     videoContainer.className = 'video-cont';

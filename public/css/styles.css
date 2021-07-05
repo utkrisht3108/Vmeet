@@ -299,6 +299,7 @@ textarea {
   left: 20px;
   top: 10px;
   background-color: #393e46;
+  color: white;
   outline: none;
   border: none;
   font-size: 3rem;
@@ -433,14 +434,14 @@ textarea {
   bottom: 10px;
 }
 .container-room .left-cont .video-cont-single {
-  height: 75vh;
+  height: 80%;
   padding-left: 2.5%;
   padding-right: 2.5%;
 }
 .container-room .left-cont .video-cont-single .video-box {
   background-color: #353b48;
   height: 100%;
-  min-height: 200px;
+  min-height: 160px;
   width: 100%;
   border-radius: 5px;
   position: relative;
@@ -483,7 +484,7 @@ textarea {
   bottom: 10px;
 }
 .container-room .left-cont .whiteboard-cont {
-  height: 75vh;
+  height: 80%;
   width: 100%;
   left: 0;
   top: 0;
@@ -588,7 +589,7 @@ textarea {
   text-align: center;
   margin: 0 auto;
   display: flex;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 300px;
   background-color: #121212;
   border-radius: 10px;
@@ -643,7 +644,9 @@ textarea {
   cursor: pointer;
   background-color: #393e46;
 }
-
+.utils .same4 {
+  background-color: #61b15a;
+}
 .container-room .right-cont {
   width: 25%;
   background-color: #121212;
@@ -672,7 +675,7 @@ textarea {
 .container-room .right-cont .head-title .chats {
   padding: 10px;
   padding-top: 15px;
-  width: 100%;
+  width: 80%;
   text-align: left;
   margin-left: 2%;
   font-size: 1.45rem;
@@ -719,6 +722,8 @@ textarea {
   outline: none;
 }
 .container-room .right-cont .chat-cont .message {
+  overflow-x: hidden;
+  overflow-y: hidden;
   margin-bottom: 12.5px;
   margin-left: 5px;
   margin-right: 5px;
@@ -765,7 +770,7 @@ textarea {
 }
 .container-room .right-cont .chat-input-cont .ci-send {
   width: 20%;
-  margin-left: 20px;
+  margin-left: 18px;
 }
 .container-room .right-cont .chat-input-cont .chat-input {
   width: 100%;
@@ -815,7 +820,7 @@ textarea {
   left: 50%;
   opacity: 0;
   font-size: 14px;
-  transition: opacity 0.3s;
+  transition: 0.3s;
 }
 .up {
   bottom: 125%;
@@ -868,7 +873,7 @@ textarea {
 }
 @media (max-width: 700px) {
   .container-room .right-cont .chat-cont {
-    height: 80vh;
+    height: 78vh;
   }
   .container-room .left-cont .whiteboard-cont .colors-cont {
     right: 40px;
@@ -891,9 +896,9 @@ textarea {
   .chatButton {
     display: flex;
   }
-
   .overlay .box {
     width: 75%;
+    margin: 11%;
   }
   .container-room .left-cont {
     width: 100%;
@@ -903,7 +908,45 @@ textarea {
     width: 100%;
   }
 }
+
+@media (min-height: 800px) and (max-width: 662px) {
+  .container-room .right-cont .chat-cont {
+    height: 65vh;
+  }
+  .container-room .left-cont .whiteboard-cont {
+    height: 65%;
+  }
+  .container-room .left-cont .video-cont-single {
+    height: 65%;
+  }
+  .container-room .left-cont .video-cont {
+    height: 65%;
+  }
+}
+.copyLink {
+  display: none;
+}
+.chatIcon {
+  display: none;
+}
+.backIcon {
+  display: none;
+  color: white;
+  font-size: 2rem;
+}
 @media (max-width: 662px) {
+  .copycode-cont {
+    display: none;
+  }
+  .copyLink {
+    display: block;
+  }
+  .chatIcon {
+    display: block;
+  }
+  .backIcon {
+    display: block;
+  }
   .overlay .box .head-name {
     font-size: 1rem;
   }
@@ -916,23 +959,17 @@ textarea {
   .sideho {
     display: none;
   }
-  .copycode-cont .roomcode {
-    font-size: 0.7rem;
-  }
-  .copycode-cont .copycode-button {
-    width: 80px;
-  }
   .landing_time {
     margin-top: 10px;
     margin-left: 5px;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .settings {
     margin: 0% 28%;
     margin-top: 3%;
   }
   .joinroom {
-    font-size: 100%;
+    font-size: 1.2rem;
   }
   .logo {
     display: block;
@@ -940,8 +977,8 @@ textarea {
     padding-bottom: 5%;
   }
   .video-cont1 {
-    padding-left: 0;
-    margin-bottom: 50%;
+    /* padding-left: 0; */
+    margin-bottom: 60%;
   }
   .video-self {
     max-height: 450px;
@@ -960,9 +997,15 @@ textarea {
   }
   .container-room .left-cont .footer {
     position: static;
+    text-align: center;
     /* margin-top: -20%; */
   }
-  /* .utils {
-    width: auto;
-  } */
+  .utils {
+    width: 100%;
+    padding: 10px;
+  }
+}
+.roomlink {
+  position: absolute;
+  font-size: 1px;
 }

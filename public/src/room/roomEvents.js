@@ -215,17 +215,16 @@ whiteboardButt.addEventListener('click', () => {
   }
 });
 
-var chatcnt = 0;
-chatButton.addEventListener('click', () => {
-  if (x == 0) {
-    document.querySelector('.container-room .right-cont').style.display = 'block';
-    document.querySelector('.container-room .left-cont').style.display = 'none';
-    chatButton.innerHTML = `<i class="fas fa-arrow-left"></i>`;
-    x = 1;
-  } else {
-    document.querySelector('.container-room .right-cont').style.display = 'none';
-    document.querySelector('.container-room .left-cont').style.display = 'block';
-    chatButton.innerHTML = `<i class="fas fa-comment-alt"></>`;
-    x = 0;
-  }
+copyLink.addEventListener('click', () => {
+  CopyLinkText();
+});
+
+chatIcon.addEventListener('click', () => {
+  document.querySelector('.container-room .right-cont').style.display = 'block';
+  document.querySelector('.container-room .left-cont').style.display = 'none';
+});
+
+backIcon.addEventListener('click', () => {
+  document.querySelector('.container-room .right-cont').style.display = 'none';
+  document.querySelector('.container-room .left-cont').style.display = 'block';
 });

@@ -11,7 +11,7 @@ let colorRemote = 'black';
 let drawsizeRemote = 3;
 function fitToContainer(cansize) {
   cansize.style.width = '101%';
-  cansize.style.height = '105%';
+  cansize.style.height = '102%';
   cansize.width = canvas.offsetWidth;
   cansize.height = canvas.offsetHeight;
   socket.emit('getCanvas');
