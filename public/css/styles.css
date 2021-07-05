@@ -910,16 +910,16 @@ textarea {
 }
 @media (min-height: 711px) and (max-width: 662px) {
   .container-room .right-cont .chat-cont {
-    height: 70vh;
+    height: 60vh;
   }
   .container-room .left-cont .whiteboard-cont {
-    height: 70%;
+    height: 60%;
   }
   .container-room .left-cont .video-cont-single {
-    height: 70%;
+    height: 60%;
   }
   .container-room .left-cont .video-cont {
-    height: 70%;
+    height: 60%;
   }
 }
 
