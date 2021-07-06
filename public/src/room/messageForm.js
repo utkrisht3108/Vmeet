@@ -8,6 +8,7 @@ socket.on('message', (message) => {
             </div>
             <div class="content">${message.message}</div>
           </div>`;
+  chatRoom.scrollTop = chatRoom.scrollHeight;
 });
 
 //admin message
@@ -21,4 +22,5 @@ socket.on('Adminmessage', (message) => {
             </div>
             <div class="content admincontent">${message.message}</div>
           </div>`;
+  chatRoom.scrollTop = chatRoom.scrollHeight;
 });

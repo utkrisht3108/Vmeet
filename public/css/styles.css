@@ -686,7 +686,7 @@ textarea {
   background-color: #121212;
   height: 83vh;
   padding: 10px;
-  padding-bottom: 70px;
+  padding-bottom: 0px;
 }
 .copycode-cont {
   z-index: 2;
