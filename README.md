@@ -6,6 +6,8 @@
 # Link
 https://vmeet1.herokuapp.com
 
+(Note: Video calling with other people may not work on Wifi, switch to Mobile data)
+
 # Getting Started
 1. Clone the directory or download the directory as zip file.
 
