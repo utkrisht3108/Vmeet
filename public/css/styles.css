@@ -28,6 +28,7 @@ body {
 .sideho {
   text-align: right;
   padding: 10px;
+  padding-bottom: 5px;
 }
 .chota {
   color: #121212;
@@ -168,6 +169,7 @@ textarea {
   background-color: #6d6c6c;
   border-radius: 20px;
   object-fit: cover;
+  transform: scaleX(-1);
 }
 .settings {
   margin: 0 30%;
@@ -403,6 +405,7 @@ textarea {
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
+  transform: scaleX(-1);
 }
 .container-room .left-cont .video-cont .video-box .nametag {
   color: white;
@@ -453,6 +456,7 @@ textarea {
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
+  transform: scaleX(-1);
 }
 .container-room .left-cont .video-cont-single .video-box .nametag {
   color: white;
